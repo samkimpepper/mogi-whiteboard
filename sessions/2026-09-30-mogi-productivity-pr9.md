@@ -141,3 +141,29 @@ PR #7에서 모기가 말한 선호를 이번 작성에 적용했다.
 - 마지막 확인한 version 32의 `block-34`, `block-36`, `block-39`를 고정 Markdown 코드 블록으로 바꾸는 수정안을 `drafts/pr9-code-fragments.md`와 JSON에 준비했다. pinned head의 원문에서 각각 6·7·5줄을 추출해 확인했으며, 원문 링크와 기존 설명은 유지하는 안이다. 아직 Whiteboard 적용·화면 확인·사용자 평가는 하지 않았다.
 - 이후 모기는 수정안을 구현 에이전트에 전달했고 반영됐다고 알렸다. 이 세션에서는 변경된 version과 실제 화면을 독립적으로 확인하지 못했다.
 - 이어서 대화와 Whiteboard 문서에도 고양이 말투와 고양이 이모지를 요청했다. 현재 리뷰 읽기 호출 역시 승인 필요로 거절돼 직접 반영하지 못했다. 코드·명령어·인용 원문과 최근 코드 조각 수정을 보존하는 `drafts/pr9-cat-tone.md`를 준비했고, `PROMPTS.md`에 문서 말투 선호를 기록했다.
+
+
+## 2026-10-01 재개 — 새 head의 기존 설명 갱신 완료 😸🐾
+
+모기가 HANDOFF를 읽게 한 뒤 기록소 변경을 커밋·main 푸시하도록 요청했다. `6e2542a`로 10개 기록 파일을 커밋했고 origin/main에 반영했다. 이후 이전 세션의 independent-first 갱신 작업을 지금 완료해 달라고 요청했다.
+
+- 현재 권한은 danger-full-access / approval policy never다. Whiteboard authoring instructions·capabilities·문서 읽기가 정상 응답했다. 이전 오류의 내부 원인을 확정하거나 권한 설정을 변경하지 않았다.
+- 기존 리뷰 version 36을 읽었다. pins는 이전 head `e4611ac`였고 코드 발췌 6·7·5줄은 고정 Markdown으로 반영돼 있었다. 문서는 아직 formal 말투였으며 이후 작성자 인용을 보존했다.
+- GitHub PR head `4e33226029f8aa469008d31c146d235ad1e97639`, 동일 base, OPEN 상태를 재확인했다. PR review·inline comment·일반 comment도 다시 읽고 Cubic 두 지적과 작성자 답변을 대조했다. 재조회 기준 시각은 2026-10-01 06:42 UTC 부근이다.
+- 기존 새 head clone과 이전 `tests.log`가 남아 있었고 121개 통과·실패 0개를 재확인했다. 동일 commit의 clone은 clean이다. 이번 재개에서는 테스트·설치 preview를 다시 실행하지 않았다.
+- 새 clone을 Whiteboard에 등록했다: repositoryId `a7b90208-d78a-4390-ab08-d74221eb222f`. 새 document lease로 기존 리뷰를 repin하고 직전 head 이후 diff를 읽었다. 이전 pins·본문은 history에 남는다.
+- 설치 전 root/main 검사와 preview/apply 경계, 새 설치 flow diagram과 CALL TREE, Cubic P2/P3 지적·코드 수정·작성자 보고·이전 독립 검증, 테스트 5개 및 전체 121개 결과, 이동한 설치 코드 링크, 운영 확인 범위를 갱신했다. 매일 루틴에 main 검사가 생긴 것처럼 설명하지 않았다. 기존 작성자 인용은 문자 그대로 보존했고 짧은 코드 블록과 쉬운 설명·실제 명령어를 유지하며 고양이 말투를 반영했다.
+- lens 5개가 7개 파일을 모두 분류하며 미분류 변경은 0이다. 새 검사·테스트에 맞춰 lens 제목도 갱신했다.
+- 최종 문서 **version 76**을 다시 읽었다. pins는 base `451ced7deb1fe0344a52b5982a6d69ebcbde5e8d`, head `4e33226029f8aa469008d31c146d235ad1e97639`다. staleSources는 0이다.
+- 검증: 연결된 원문 범위 53개가 해당 pinned 파일 범위 안에 있음을 확인했다. 변경되지 않은 기존 원문 범위 17개는 이전 head와 동일했다. 코드 발췌 5개가 pinned 원문과 정확히 일치했다(기존 6·7·5줄, Cubic 8·1줄). MCP session_source도 이동한 223–227행의 commit·내용을 확인했다.
+- trace 지침에 따라 새 commit의 hosted 목록을 읽었으나 `TraceStorageDeniedError: You cannot use this repository.`로 거절됐다. 저장소 이름이 임시 clone 이름으로 보이는 상황도 있으나 실패의 내부 원인으로 확정하지 않는다. trace 없음으로 기록하지 않았고 설정·업로드·우회는 하지 않았다. 이번에 작성자 로컬 인용 원문을 독립 재확인하지 못했다는 점을 what/why에 명시했다.
+- `session_open`은 성공했다. CUA의 Whiteboard 화면 읽기는 120초 뒤 timeout되어 실제 화면 표시를 확인하지 못했다. 이 대기 후 document lease가 만료돼 마지막 편집이 거절되었으므로 새 lease를 얻고 문서를 다시 읽어 최종 편집을 적용했다. 최종 document/lenses lease는 모두 종료했다. 화면 확인과 모기의 읽기 효과 평가는 아직 남아 있다.
+- 원본 `mogi-productivity`, 실제 예약·Calendar·Things·권한 설정은 변경하지 않았다. 갱신안은 적용 완료 상태로 표시하고 HANDOFF·STATE·우편함에 결과를 반영했다. 이번 결과 기록은 아직 커밋·푸시하지 않았다.
+
+## 2026-10-01 — Cubic 리뷰까지 읽기 완료와 P2 관찰 😸
+
+모기가 갱신한 설명을 Cubic 리뷰까지 모두 읽었다고 알렸다. 특히 main checkout을 쓰라는 요구가 있었는데도 최초 설치 코드가 branch를 확인하지 않은 이유를 생각해보겠다고 했다. 다음에도 비슷한 일이 발생하면 `mogi-productivity` 저장소 자체의 문서 라우팅·설계를 점검하자는 관찰이다.
+
+현재 확인된 사실은 문서의 운영 요구와 최초 설치 검사 사이에 차이가 있었다는 점이다. 구현 에이전트가 관련 문서를 찾지 못했는지, 읽었으나 운영 지침으로만 해석했는지, 구현·테스트로 연결하는 과정에서 빠졌는지는 확인되지 않았다. 재발 시 이 경로를 구분해 살펴볼 수 있지만 이번 한 사례로 문서 라우팅 결함을 확정하지 않는다. 현재 전체 점검이나 원본 문서 변경 요청으로 확대하지 않았고 Whiteboard·원본 저장소도 변경하지 않았다.
+
+읽기 완료는 기록하되, 특정 표현의 효과·충분한 코드 이해·짧은 발췌의 실제 화면 범위가 확인됐다고 해석하지 않는다.

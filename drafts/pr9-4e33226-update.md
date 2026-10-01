@@ -1,6 +1,8 @@
 # PR #9 — 새 head 설명 갱신안 😸🐾
 
-상태: **독립 코드 확인·검증 완료 / Whiteboard 미적용**
+상태: **독립 코드 확인·검증 완료 / 2026-10-01 Whiteboard version 76 적용 완료**
+
+재개 세션에서 최신 version 36을 읽고 기존 리뷰 ID를 유지해 새 head로 repin·갱신했다. 아래 준비 당시 차단 기록과 적용안은 보존한다. 실제 적용 결과·범위 검증·화면 확인 한계는 `HANDOFF.md`와 세션 문서의 재개 기록을 따른다. 이 적용안을 다시 실행하지 않는다.
 
 Whiteboard MCP의 지침·capabilities·현재 본문 조회가 모두 `MCP tool call requires approval, but approval policy is never`로 거절됐다. CLI·UI·SQL 등으로 우회하지 않았다. 아래는 화이트보드냥이가 독립적으로 준비한 적용안이며, 투두냥이에게 설명 작성을 대신 요청하는 안이 아니다.
 

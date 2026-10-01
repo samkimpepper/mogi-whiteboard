@@ -1,8 +1,8 @@
 {
   "sessionId": "f0081637-7560-480a-91df-275735cde566",
-  "applied": false,
-  "lastObservedVersion": 32,
-  "currentVersionUnknown": true,
+  "applied": true,
+  "lastObservedVersion": 76,
+  "currentVersionUnknown": false,
   "repositoryPath": "/private/tmp/mogi-productivity-pr9-4e33226-whiteboard.OFPpaH",
   "base": "451ced7deb1fe0344a52b5982a6d69ebcbde5e8d",
   "head": "4e33226029f8aa469008d31c146d235ad1e97639",
@@ -45,5 +45,9 @@
     "docsImpact": "passed-no-reminders",
     "integrationsPrGuard": "skipped-on-feature-branch"
   },
-  "observationTimeUtc": "2026-10-01T05:32:10Z"
+  "observationTimeUtc": "2026-10-01T05:32:10Z",
+  "appliedVersion": 76,
+  "currentRepositoryId": "a7b90208-d78a-4390-ab08-d74221eb222f",
+  "applicationNote": "Applied to existing review after reading version 36. Preserved quotes and short fragments. UI display verification timed out; source and document checks passed. Do not replay this draft.",
+  "draftPreparedAtObservedVersion": 32
 }
