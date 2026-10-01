@@ -1,0 +1,61 @@
+{
+  "sessionId": "f0081637-7560-480a-91df-275735cde566",
+  "lastObservedVersion": 32,
+  "applied": false,
+  "replacements": [
+    {
+      "targetId": "block-34",
+      "expectedType": "code_peek",
+      "source": {
+        "file": "integrations/routine/src/launchd.js",
+        "head": "e4611acf3e89aeddabb1b330d3aa0ad1336e325a",
+        "fromLine": 66,
+        "toLine": 71
+      },
+      "edit": {
+        "type": "replace",
+        "targetId": "block-34",
+        "content": {
+          "type": "markdown",
+          "markdown": "```javascript\n    '  <key>ProgramArguments</key>',\n    '  <array>',\n    stringNode(nodePath),\n    stringNode(scriptPath),\n    stringNode(\"--apply\"),\n    '  </array>',\n```\n\n[원문: integrations/routine/src/launchd.js 66–71행](review-source:head/integrations/routine/src/launchd.js#L66-L71)"
+        }
+      }
+    },
+    {
+      "targetId": "block-36",
+      "expectedType": "code_peek",
+      "source": {
+        "file": "integrations/routine/src/launchd.js",
+        "head": "e4611acf3e89aeddabb1b330d3aa0ad1336e325a",
+        "fromLine": 79,
+        "toLine": 85
+      },
+      "edit": {
+        "type": "replace",
+        "targetId": "block-36",
+        "content": {
+          "type": "markdown",
+          "markdown": "```javascript\n    '  <key>StartCalendarInterval</key>',\n    '  <dict>',\n    '    <key>Hour</key>',\n    `    <integer>${hour}</integer>`,\n    '    <key>Minute</key>',\n    `    <integer>${minute}</integer>`,\n    '  </dict>',\n```\n\n[원문: integrations/routine/src/launchd.js 79–85행](review-source:head/integrations/routine/src/launchd.js#L79-L85)"
+        }
+      }
+    },
+    {
+      "targetId": "block-39",
+      "expectedType": "code_peek",
+      "source": {
+        "file": "integrations/routine/bin/holiday-schedule.js",
+        "head": "e4611acf3e89aeddabb1b330d3aa0ad1336e325a",
+        "fromLine": 201,
+        "toLine": 205
+      },
+      "edit": {
+        "type": "replace",
+        "targetId": "block-39",
+        "content": {
+          "type": "markdown",
+          "markdown": "```javascript\n    await rename(temporaryPath, paths.plistPath);\n    await execFileAsync(\"/bin/launchctl\", [\"bootstrap\", `gui/${uid}`, paths.plistPath], {\n      encoding: \"utf8\",\n      timeout: 10_000,\n    });\n```\n\n[원문: integrations/routine/bin/holiday-schedule.js 201–205행](review-source:head/integrations/routine/bin/holiday-schedule.js#L201-L205)"
+        }
+      }
+    }
+  ]
+}
