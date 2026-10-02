@@ -10,7 +10,9 @@ PR #10의 데이터 수집·가공·snapshot·API 갱신을 백엔드 관점으�
 
 ## 현재 실험
 
-PR #10 리뷰 ID `698dff95-527d-41c2-9229-ccc59ef49539`, 현재 확인 version은 **59**다. 독립 설명은 version 51에 작성했고 투두냥이가 trace 기반 작성자 설명을 보충했다. 본문은 기존 base `15b07272dbc7aa2c05edbdbfbba58e3d40cbb61b`, head `13a5c409b576b6b2085a7eff6acdc9c98c27123e` 기준을 유지한다. Things 정규화·최신 imported_at·서울 경과일·검토 세션 집계·인박스 중복 제거·동시 갱신·실패 종류를 설명했다.
+2026-10-02 모기가 승인한 [역할 등록 실험](sessions/2026-10-02-agent-registration.md)에서 두 냥이가 각자 `.local/agent-registry/`의 자기 JSON을 만들고 상대 주소를 현재 Orca 목록과 대조했다. 화이트보드냥이 보낸 한 번의 요청으로 투두냥 턴 시작과 실제 등록 실행을 확인했다. local Codex 두 세션의 현재 주소 발견은 성공했으며, 역방향 직접 알림·재시작·새 세션 재등록·MAILBOX 자동 알림은 아직 검증하거나 도입하지 않았다. [공통 경로·등록 방법](communication/README.md)은 HANDOFF에서도 연결한다. 등록 파일은 Git에서 제외한다.
+
+PR #10 리뷰 ID `698dff95-527d-41c2-9229-ccc59ef49539`, 현재 확인 version은 **76**다. 독립 설명은 version 51에 작성했고 투두냥이가 version 59까지 trace 기반 작성자 설명을 보충했다. 모기의 메타데이터 표시 요청에 따라 version 76에서 확인용 commit·조회 정보·trace 이벤트·실행 명령을 접힌 ‘확인 근거’로 분리했다. 본문은 기존 base `15b07272dbc7aa2c05edbdbfbba58e3d40cbb61b`, head `13a5c409b576b6b2085a7eff6acdc9c98c27123e` 기준을 유지한다. Things 정규화·최신 imported_at·서울 경과일·검토 세션 집계·인박스 중복 제거·동시 갱신·실패 종류를 설명했다. [표시 변경 기록](sessions/2026-10-02-whiteboard-metadata.md)에 적용 범위와 확인 한계를 남겼다.
 
 독립 작성 version 51에서 직접 실행한 백엔드 테스트 6개가 통과했다. 당시 원문 범위 56개·정확한 발췌 7개, staleSources·미분류 변경 0개를 확인했다. Cubic의 데이터 P2 두 건과 테스트 정리 P3를 가상 입력으로 확인했다. 독자 검토한 후속 대응은 MAILBOX에 넣지 말라는 모기의 정정에 따라 기존 전달 목록을 철회했다. 실제 Things·개인 archive·라이브 서버·화면을 독립 검증한 결과로 표현하지 않는다. hosted trace 조회는 저장소 접근 거절로 실패했으며 원인을 확정하거나 우회하지 않았다. 작성자 보충 이후 원본 trace 전체를 독립 재검증하지 않았다. 상세 근거는 [PR #10 세션 기록](sessions/2026-10-01-mogi-productivity-pr10.md)에 있다.
 
