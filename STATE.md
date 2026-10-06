@@ -2,7 +2,11 @@
 
 ## 세션 재개 — 2026-10-06
 
-STATE·HANDOFF·최신 인계·DECISIONS·MAILBOX를 읽고 재개했다. 모기의 요청으로 실제 세션 종료 때 인계 작성 후 기록소의 미커밋 변경을 커밋하고 기존 미푸시 커밋과 함께 푸시하는 절차를 DECISIONS·HANDOFF에 추가했다. 이번 요청은 절차 수정이며 세션 종료가 아니다. 지금 커밋·푸시는 수행하지 않았다. 아래 종료 상태는 이전 인계 당시 기록이다.
+STATE·HANDOFF·최신 인계·DECISIONS·MAILBOX를 읽고 재개했다. 모기의 요청으로 실제 세션 종료 때 인계 작성 후 기록소의 미커밋 변경을 커밋하고 기존 미푸시 커밋과 함께 푸시하는 절차를 DECISIONS·HANDOFF에 추가했다. 이후 별도 요청으로 기존 변경 7개 파일을 `fe0dd3b`에 커밋하고 origin/main에 푸시했으며 원격 head 일치와 깨끗한 작업 폴더를 확인했다. 세션 종료 요청은 아니다. 아래 종료 상태는 이전 인계 당시 기록이다.
+
+이어 모기가 대화 원문 저장 훅 구현을 요청해 mogi-productivity의 codex-chat 코드를 읽고 이 기록소에 맞게 독립 구현을 추가했다. `.codex/hooks.json`의 Stop·SessionEnd에서 텍스트 발화만 `.local/chat-archive/live/`·`final/`에 저장한다. 원문 줄바꿈을 보존하며 도구 호출·결과·내부 지침·reasoning은 제외한다. 원문은 Git ignore 대상이고 훅은 커밋·푸시하지 않는다. 임시 fixture 기반 28개 테스트와 diff 검사가 통과했다. 설치 당시에는 새 훅 trust가 없어 `/hooks` 활성화를 안내했고, 이후 활성화 확인은 아래에 기록했다. 실제 lifecycle 자동 저장은 아직 확인하지 않았다. [구현·활성화 안내](integrations/codex-chat/README.md). 모기의 후속 요청으로 이 구현과 활성화 기록을 커밋·푸시 대상으로 확인했다. 원본 mogi-productivity는 변경하지 않았다.
+
+재개 후 훅 활성화 확인: 모기의 두 차례 활성화 안내 뒤 로컬 설정에서 이 프로젝트의 Stop·SessionEnd 모두 trusted_hash와 enabled = true를 확인했다. 확인 시점에는 live/final 저장 파일과 오류 파일이 아직 없었다. 활성화는 확인했으나 실제 lifecycle 저장 성공은 다음 Stop·SessionEnd 실행 뒤 확인해야 한다.
 
 ## 세션 상태 — 2026-10-06 종료 인계 완료 😸
 
