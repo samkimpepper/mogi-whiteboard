@@ -1,5 +1,9 @@
 # STATE
 
+## 과외냥 설명 규칙 적용 — 2026-10-07
+
+모기가 Claude의 조언과 `mogi-cards` 지침 도입 의사를 전해 로컬 프리앰블·story-first 예시와 이 기록소의 읽기 관찰을 대조했다. PROMPTS 맨 앞에 사용자 사건 먼저·주어/목적어/시점/전후 명시·구체적인 값 하나 따라가기·용어를 동작으로 풀기라는 현재 설명 순서를 추가하고 AGENTS·DECISIONS에 연결했다. 이어 모기는 ‘얇게 시작하는 문서 방식도 다음 PR에서 시험’을 선택해 다음 새 PR 한 건에 사건 흐름·예시 하나·핵심 코드 약 세 조각으로 시작하고 읽는 중 막힌 대목을 보완하는 임시 방식을 PROMPTS에 추가했다. 기존 Cubic 포함 요청·중요 테스트/운영 한계는 처음부터 유지하고 한 건 후 재논의하며 자동 반복하지 않는다. 새 PR에서의 효과는 아직 미관찰이고 PROMPTS 전체 이력 이관은 하지 않았다. [출처·범위](sessions/2026-10-07-tutor-explanation-rules.md). 과외냥 하네스 동결은 유지한다.
+
 ## 세션 시작 Run 주소 갱신 적용 — 2026-10-07
 
 모기의 요청으로 `AGENTS.md`를 추가하고 HANDOFF·DECISIONS·통신 안내에 매 세션 시작/resume 때 `.local/agent-registry/whiteboard.json`을 갱신·resolve하는 절차를 반영했다. 등록 스크립트는 Run ID·consumerGeneration 저장과 실제 연결 대조, 환경 변수 부재 시 Orca caller 조회를 지원한다. 이번 세션의 옛 주소를 현재 runtime·터미널·Run `run_1e7c2974ac9f`로 교체한 뒤 일반 register 재실행과 resolve 성공을 확인했다. 주소 파일은 Git 제외다. 8개 fixture 테스트와 diff 검사가 통과했다. 다음 새 세션에서 지침을 따라 실행하는 것은 아직 관찰하지 않았다. [변경 근거](sessions/2026-10-07-startup-registration.md). 전체 주소 등록 계획의 새 경로 이관·잠금/교체 세대 제어·상대 레포 시작 절차·알림 훅은 미구현이며 아래 미구현 기록은 당시 상태다.
