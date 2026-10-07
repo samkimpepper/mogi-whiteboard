@@ -1,5 +1,11 @@
 # 2026-10-07 — PR #16 읽기 피드백 MAILBOX 알림
 
+## 종료 후 수신 확인
+
+화이트보드냥은 두 회신을 처리한 뒤 delivery_4650e32ad4b2를 ACK했고 acknowledged 일치·남은 메시지 0개를 확인했다.
+
+종료 인계 직후 투두냥의 회신 두 건 `msg_237a7dcd7e15`·`msg_59fa482c99aa`를 delivery `delivery_4650e32ad4b2`로 읽었다. 현재 새 handle에서 보낸 답장이며 각각 최초 MAILBOX 알림·연결 복구 알림의 thread_id에 연결돼 있다. 투두냥은 MAILBOX를 끝까지 읽고 한 번만 인수했으며 오류 처리 검토는 아직 미완료, 원문은 보존했다고 보고했다. 새 터미널·generation 2 연결도 확인했고 받은 delivery를 ACK하겠다고 했다. 상대 ACK 완료를 이 말만으로 확정하지 않는다. 실제 회신으로 수신·인수는 확인됐지만 어떤 계기로 check를 실행했는지는 알 수 없어 자동 깨우기 원인이 해결됐다고 주장하지 않는다. 아래 미수신 기록은 그 이전 관찰이다.
+
 모기가 MAILBOX 작성 뒤 투두냥에게 신호도 보내라고 명시적으로 요청했다. orca-cli·orchestration의 설치 버전 안내와 messaging-and-gates를 읽고 `orca`로 구조화 status 메시지 한 번을 보냈다.
 
 전송 전 Orca 1.4.221 runtime `014d32e0-7cea-4939-8d6b-071da50585a6`에서 투두냥 terminal show를 조회했다. 기존 handle `term_49111819-b7e0-4868-a804-3f013a554c46`·incarnation `6ff5296c-828c-4e99-84fb-b46c1d8d6b24`가 같고 local Codex, mogi-productivity main workspace, connected/writable였다. preview에도 PR #16 보충·Cubic 처리 맥락이 있었다. 양쪽 run-current로 현재 binding을 확인했다. 주소 자동 등록 계획은 아직 구현하지 않았다.
