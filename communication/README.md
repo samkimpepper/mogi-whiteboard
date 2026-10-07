@@ -1,8 +1,26 @@
 # 역할 등록 실험 😸
 
-## 합의한 다음 설계 — 아직 미구현
+## 세션 시작 때 자기 주소 갱신
 
-[세션 시작·Run 주소 등록 계획](agent-address-plan.md)에 각 레포의 자기 주소 파일, 역할별 대표 한 명, 동일 세션/다른 세션 동시 실행, 등록 잠금·교체 세대·송수신 전 확인 규칙을 정리했다. 2026-10-06 모기의 계획 기록 요청이며 자동 등록 설치나 구현 시작 지시는 아니다.
+2026-10-07 모기의 요청으로 **화이트보드냥은 매 세션 시작·resume 때** `.local/agent-registry/whiteboard.json`을 갱신한다. 시작 지침은 루트 `AGENTS.md`와 `HANDOFF.md`에 있다. 과거 주소 등록 계획의 미구현 기록보다 이 후속 규칙을 우선한다.
+
+1. 설치된 `orca-cli` 스킬 안내로 이 세션의 CLI 실행 파일을 정한다. 아래 `orca`는 기본 설치 예시이며 환경에 맞는 동일 실행 파일을 계속 쓴다.
+2. `orca terminal show --json`·`orca orchestration run-current --json`으로 **호출한 자기 터미널**과 Run을 확인하고 현재 목록에 대조한다. 환경 변수 `ORCA_TERMINAL_HANDLE`이 없으면 스크립트도 `terminal show`로 caller를 조회한다. 작업공간 이름·터미널 제목만으로 자기 주소를 추측하지 않는다.
+3. 유효한 기존 Run이 연결돼 있으면 그대로 사용한다. resume 후 연결이 빠졌으면 같은 대화의 기존 Run임과 대표 연결 이전을 확인한 경우에만 `orca orchestration run-use --id <확인한-Run-ID> --from <자기-handle> --json`으로 복구한다. 새 역할 담당으로 지정됐고 자기 Run이 없으면 `orca orchestration run-create --objective '화이트보드냥 메시지 수신' --from <자기-handle> --json`으로 한 번 만든다. 결과가 불명확하면 상태부터 재조회하며 반복 생성하지 않는다. 상대 Run을 가져오지 않는다.
+4. 루트에서 아래 명령으로 등록·확인한다. 파일에는 `runId`, `consumerGeneration`, 현재 runtime·handle·incarnation·작업공간·host·agent와 등록 시각이 저장된다. 스크립트는 자기 로컬 Codex 작업공간과 Run 연결을 대조하고 원자적으로 파일을 교체한다. resolve는 Run·consumerGeneration도 실제 연결과 비교한다.
+
+```sh
+python3 scripts/agent-registry.py register whiteboard
+python3 scripts/agent-registry.py resolve whiteboard
+```
+
+주소 변경으로 register가 거절되면 기존 파일과 현재 Orca 정보를 확인한다. 모기가 이 세션을 담당 화이트보드냥으로 지정했거나 교체를 명시한 경우 `python3 scripts/agent-registry.py register whiteboard --replace`를 실행하고 다시 resolve한다. 다른 살아 있는 담당자와 교체 권한이 불명확하면 덮어쓰지 않는다. 오래된 파일·부재·agentWait=null만으로 기존 담당자의 종료를 단정하지 않는다.
+
+자기 주소 확인·Run 준비가 실패하면 기존 파일을 보존하고 미갱신 이유를 알린다. Run ID를 수동으로 끼워 넣어 성공한 것처럼 기록하지 않는다. 이 절차는 에이전트가 시작 지침을 읽고 수행하는 것이며 lifecycle 훅·자동 인사·상시 polling을 설치하지 않는다. 상대 주소 파일은 읽기만 한다.
+
+## 합의한 다음 설계 — 나머지 범위는 미구현
+
+[세션 시작·Run 주소 등록 계획](agent-address-plan.md)에 각 레포의 자기 주소 파일, 역할별 대표 한 명, 동일 세션/다른 세션 동시 실행, 등록 잠금·교체 세대·송수신 전 확인 규칙을 정리했다. 2026-10-06 당시에는 계획 기록만 요청했다. 10월 7일 후속 요청으로 위 화이트보드냥 시작 절차·기존 주소록 Run 저장을 적용하며 나머지 계획은 미구현이다.
 
 ## 현재 추가 실험 — 2026-10-06
 
