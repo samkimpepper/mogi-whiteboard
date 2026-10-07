@@ -19,5 +19,6 @@
 
 - 원본 `mogi-productivity`의 코드·문서·branch·PR·댓글을 변경하지 않는다.
 - Whiteboard 작성·갱신은 `PROMPTS.md`, 할 일 전달은 `DECISIONS.md`의 MAILBOX 규칙을 따른다.
+- 새 PR Whiteboard의 독립 작성·검증·본문 재확인과 lease 종료 후에는 `DECISIONS.md`의 작성 후 보충 요청 규칙에 따라 MAILBOX에 요청을 추가하고 현재 투두냥 Run으로 신호를 한 번 보낸다. 모기의 별도 전송 승인을 반복해서 묻지 않는다.
 - 대화 원문·주소록 등 `.local/` 파일은 Git에 포함하지 않는다.
 - 실제 세션 종료 요청을 받으면 `HANDOFF.md`의 인계 작성·커밋·푸시 절차를 따른다. 시작 지침 수정 요청 자체는 종료 요청이 아니다.

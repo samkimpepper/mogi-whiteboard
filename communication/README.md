@@ -22,6 +22,17 @@ python3 scripts/agent-registry.py resolve whiteboard
 
 [세션 시작·Run 주소 등록 계획](agent-address-plan.md)에 각 레포의 자기 주소 파일, 역할별 대표 한 명, 동일 세션/다른 세션 동시 실행, 등록 잠금·교체 세대·송수신 전 확인 규칙을 정리했다. 2026-10-06 당시에는 계획 기록만 요청했다. 10월 7일 후속 요청으로 위 화이트보드냥 시작 절차·기존 주소록 Run 저장을 적용하며 나머지 계획은 미구현이다.
 
+## Whiteboard 작성 뒤 보충 요청
+
+2026-10-07 모기가 앞으로 매 Whiteboard 작성 완료 뒤 투두냥이에게 보충 요청 신호를 보내도록 요청했다. [DECISIONS의 해당 규칙](../DECISIONS.md#whiteboard-작성-뒤-투두냥이에게-보충-요청을-보낸다)이 정본이다. 상시 감시나 훅이 아니라 작성한 에이전트가 완료 단계에서 수행한다.
+
+1. 독립 설명·필요한 검증·본문 재확인을 마치고 Whiteboard authoring lease를 종료한다. PR·리뷰 ID·현재 version·base/head를 확인한다.
+2. MAILBOX 기존 내용을 보존하고 보충 요청을 추가한다. 구현 중 선택한 이유·빠진 문맥만 관련 설명 옆에 통합하며 기존 인용·발췌와 얇은 문서 흐름을 유지하도록 요청한다. 새 head는 먼저 알려 독립 확인을 받도록 한다.
+3. 투두냥 레포 `/Users/leechaerim/orca/mogi-productivity/.local/agent-address.json`을 읽는다. 상대가 자기 주소를 제공하며 투두냥 레포에 화이트보드냥 스크립트·경로에 등록하라는 지침을 요구하지 않는다. 아래 10월 2일 공통 주소록 실험보다 이 현재 주소를 우선한다.
+4. 설치된 Orca 안내에 따라 자기 Run과 상대 `run-show`·`terminal show`를 조회한다. 주소의 runtime·Run/consumerGeneration·handle/incarnation·작업공간·host·agent와 connected/writable을 현재 상태에 대조한다. 불일치하면 추측 전송이나 상대 주소/Run 연결 변경 없이 미전송 이유를 보고한다.
+5. `orca orchestration send --to run:<확인한-투두냥-Run> --subject 'PR #<번호> Whiteboard 보충 요청' --body '<MAILBOX 경로·리뷰/version·pins·요청 범위>' --json`으로 한 번 보낸다. 이 명령은 기본 설치 예시이며 선택한 동일 CLI를 계속 사용한다. 메시지 ID·전송 결과를 `communication/log/`와 해당 세션 기록에 남긴다.
+6. 전송 성공은 enqueue이며 읽음·작업 시작·보충 완료를 뜻하지 않는다. 침묵만으로 중복 전송하지 않는다. 회신이 들어오면 현재 본문과 version/pins·변경 내용을 확인하고 그때 보충 완료를 기록한다. 모든 작은 읽기 질문마다 다시 요청하지 않는다.
+
 ## 현재 추가 실험 — 2026-10-06
 
 모기의 요청으로 Orca `orchestration send/check/reply`를 한 번 시험했다. 현재 화이트보드냥 Run `run_1e7c2974ac9f`, 투두냥 Run `run_928b164d57fb`를 만들고 각 현재 세션에 연결했다. 수신·답장·양쪽 ACK를 확인했으며 새 Task/Dispatch/worker나 자동 알림 훅은 만들지 않았다. 알림은 프롬프트 위치에 보이지만 본문은 발신자·메시지 ID가 있는 도구 결과로 읽힌다. [실험 근거와 한계](log/2026-10-06-01-structured-message.md).

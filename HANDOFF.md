@@ -9,7 +9,7 @@
 3. 최신 인계가 가리키는 세션 기록·적용안 등 필요한 근거만 읽는다. 이전 이력은 과거 결정이나 경과가 필요할 때 읽는다.
 4. `AGENTS.md`와 [세션 시작 때 자기 주소 갱신](communication/README.md#세션-시작-때-자기-주소-갱신)에 따라 현재 자기 Run·터미널을 확인하고 `.local/agent-registry/whiteboard.json`을 갱신·재조회한다. 매 세션 시작과 resume 때 수행한다.
 
-주소 등록·통신은 [역할 등록 안내](communication/README.md)를 따른다. 로컬 주소록은 `.local/agent-registry/`이며 Git에서 제외한다. 현재 역할 담당은 자기 주소만 등록하고, 발송 전에 실제 Orca 목록과 대조한다. MAILBOX 작성 후 자동 알림은 아직 도입하지 않았다.
+주소 등록·통신은 [역할 등록 안내](communication/README.md)를 따른다. 화이트보드냥 자기 주소는 `.local/agent-registry/whiteboard.json`, 투두냥 주소는 상대 레포가 제공하는 `.local/agent-address.json`을 읽고 실제 Orca 상태와 대조한다. 주소 파일은 Git 제외이며 상대 파일을 대신 갱신하지 않는다. 2026-10-07 후속 요청으로 새 PR Whiteboard 작성 뒤 보충 요청 신호는 매번 한 번 보낸다. 정본은 [DECISIONS의 보충 요청 규칙](DECISIONS.md#whiteboard-작성-뒤-투두냥이에게-보충-요청을-보낸다)이며 일반 MAILBOX 알림 훅은 도입하지 않았다.
 
 인계 파일은 작성 당시의 상태다. 실제 작업을 이어가기 전에는 현재 Git 상태와 필요한 Whiteboard version·pins를 다시 확인한다.
 
