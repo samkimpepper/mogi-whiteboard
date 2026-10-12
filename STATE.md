@@ -1,5 +1,143 @@
 # STATE
 
+## 읽기 마무리·종료 인계 — 2026-10-12 😸
+
+모기가 PR21 읽기를 마무리하겠다고 알리고 커밋·푸시를 요청했다. [새 인계](handoff/2026-10-12-01.md)에 PR18 읽기 완료·PR21 v45의 작성/보충/질문/검증·환경 고유명사 규칙·미확정 설계 의견을 정리했다. 최종 GitHub PR21 OPEN/같은 base·head, 소스88범위/원문 발췌6개·현재 리뷰 v45를 대조했다. 전체214시험은 독립 작성 때 통과한 결과이며 마무리 때 반복 실행하지 않았다. 자기 inbox peek0, MAILBOX1,605bytes의 이미 완료된 보충 요청은 수신자 정리 대상으로 보존했다. 이번 기록소의 PR18 기존 미커밋 기록과 현재 변경/인계를 커밋·푸시하고 최종 원격 상태를 확인한다. 원본 제품 repo·개인 자료·예약 설정을 변경하지 않았고 터미널 강제 종료/SessionEnd 성공을 선언하지 않는다.
+
+읽기 마무리는 모기의 선택이며 모든 조건의 이해·새 UAT/실제06:00 실행 확인으로 확대하지 않는다. 수동 예외/잠금 단순화는 미확정 의견으로 남아 있고 구현 요청은 전달하지 않았다. 설명 없는 코드 한 조각 다시 보기는 이번 마무리에서 진행하지 않았다. 아래 전체 읽기 미확인은 각 질문 당시 기록이다.
+
+## PR #21 읽기 마무리 범위 문의 — 2026-10-12 😸
+
+모기가 Node가 락 객체 대신 문자열 결과를 받는 흐름을 재진술하고 다 본 것인지 물었다. locked 신호와 Python이 유지하는 OS 잠금을 구분했고 v45 전체 구성에서 마지막 Cubic/검증 섹션을 안내했다. 핵심 구현 질문은 다뤘지만 전체 읽기 완료 선언으로 처리하지 않았다. 수동 예외/잠금 단순화 의견은 미확정 유지, 코드 다시 보기 활동·본문/원본/시험/추가 전달 없음이다. [범위 기록](sessions/2026-10-12-mogi-productivity-pr21.md).
+
+## PR #21 다른 언어 프로그램 대기 흐름의 소감 — 2026-10-12 😸
+
+모기가 Java·Spring 경험에 비해 Node가 Python의 잠금 결과를 기다리는 개념이 새롭고 신기하다고 말했다. Python 전용 락 공유가 아니라 OS 파일 잠금 결과를 프로그램의 출력으로 받아 진행하는 관계로 짧게 연결했다. 구체 재진술과 감상을 전체 이해로 확대하지 않는다. Whiteboard v45 유지, 새 편집/시험/원본 변경/추가 전달 없음이다. [소감 기록](sessions/2026-10-12-mogi-productivity-pr21.md).
+
+## PR #21 잠금 helper 성공 뒤 처리 구간 진입 — 2026-10-12 😸
+
+현재 Whiteboard **v45**, 같은 pins다. 모기가 OS가 Copywork 프로세스를 잠그는 것이 아니라 helper 성공 뒤 Copywork를 진행하는 흐름으로 재진술했다. 핵심은 맞으며 이미 시작된 Node의 옵션/입력 읽기 뒤 await acquireLock 성공을 기다려 원문 보존·메모 전송 구간에 들어가는 것이고 새 프로세스를 시작하는 것은 아님을 block-33에 보완했다. 본문 readback·lease 종료, 원본 변경/새 시험/추가 전달 없음이다. 잠금 결과에 따른 처리 흐름의 이해 근거와 정확한 시작 시점 정정을 구분한다. [기록](sessions/2026-10-12-mogi-productivity-pr21.md).
+
+## PR #21 OS 파일 잠금과 Python helper 선택 구분 — 2026-10-12 😸
+
+현재 Whiteboard **v44**, 같은 pins다. 모기가 Python의 OS 잠금 요청이 보통 방식인지 구조상 필수인지 물었다. block-33에 OS 파일 잠금/Java FileChannel 역할과 프로세스 전체 정지 아님·run.lock의 성공/실패에 따라 우리 코드가 진입 거절·Python helper는 구현 선택임을 보완했다. Node 표준 fs/외부 fs-ext·Python 표준 fcntl의 방법 차이와 외부 패키지 대신 helper 수명 관리의 절충을 구분했고 당시 선택 이유 원문은 미확인이다. 본문 readback·lease 종료, 새 구현/시험/원본 변경/추가 전달 없음이다. 이해·전체 읽기 완료는 미확인이다. [질문 기록](sessions/2026-10-12-mogi-productivity-pr21.md).
+
+## 환경 고유명사 설명 규칙 추가 — 2026-10-12 😸
+
+모기의 명시적 요청으로 Java·Spring/학부 OS 외 환경 고유명사를 처음 쓰는 자리에서 종류·이번 사건의 실제 동작으로 설명하는 규칙을 PROMPTS 현재 순서에 연결해 추가했다. 언어/실행 도구/코드·데이터/옵션·앱 명령 구분과 플랫폼 함수명은 별도로 설명하는 기준을 AGENTS·DECISIONS에도 반영했다. Whiteboard v43 유지, 원본 제품 repo/MAILBOX/신호 변경은 없다. 규칙 도입의 효과는 미관찰이며 세션 종료 요청이 아니다. [도입 기록](sessions/2026-10-12-mogi-productivity-pr21.md).
+
+## PR #21 RunAtLoad·Python flock의 맥락 보완 — 2026-10-12 😸
+
+현재 Whiteboard **v43**, 같은 pins다. 모기가 두 용어를 몰라 언급 맥락을 이해하지 못했다고 알려 block-33의 압축 문단을 예약 설정 로드 시 1회 실행/10:00 로그인 가상 예시와 acquireLock의 실제 Python OS 잠금 방법으로 풀었다. 언제 시작/겹친 실행의 처리 구분, RunAtLoad 자체가 같은 launchd 작업 동시 실행을 뜻하지 않음, Python이 메모 전송을 맡는 것이 아님을 명시했다. 고정 코드·설치된 launchd man/Apple·Python 공식 설명·본문 readback·lease 종료 확인, 새 실행/시험/원본 변경/추가 전달 없음이다. 이번 답변 이해·전체 읽기 완료는 미확인이다. [질문 기록](sessions/2026-10-12-mogi-productivity-pr21.md).
+
+## PR #21 실패 직후와 다음 실행의 재시도 구분 — 2026-10-12 😸
+
+현재 Whiteboard **v42**, 같은 pins다. 모기가 첫 시도 실패 뒤 재시도를 하지 않는지 물어 block-32에 같은 실행의 즉시 retry 없음/다음 apply 실행의 archived receipt 재처리를 구체 날짜로 보완했다. Mac Notes 호출 실패와 Mac 성공 뒤 Apple 동기화 실패를 구분했다. 고정 코드/기존 시험 확인·본문 readback·lease 종료, 새 시험/원본 변경/개인 접근/추가 전달 없음이다. 답변 이해·전체 읽기 완료는 미확인이다. [질문 기록](sessions/2026-10-12-mogi-productivity-pr21.md).
+
+## PR #21 Notes 자동화 명령 이해 확인 — 2026-10-12 😸
+
+모기가 메모 앱에 생성 명령이 있고 AppleScript가 내부 저장 파일을 직접 쓰지 않고 앱에 요청한다는 점을 재진술했다. deliverNotes의 임시 파일/실행 도구/코드 구분에 이어 앱 명령 호출까지 이해한 근거이며 전체 PR 이해는 아니다. 이미 도움된 이유를 밝혀 추가 평가 질문은 하지 않았다. Whiteboard **v41** 유지, 새 편집/시험/원본 변경/전달 없음이다. [피드백 기록](sessions/2026-10-12-mogi-productivity-pr21.md).
+
+## PR #21 deliverNotes 이해·AppleScript IO 코드 보완 — 2026-10-12 😸
+
+현재 Whiteboard **v41**, 같은 pins다. 모기가 구체 설명 덕분에 임시 폴더 이유까지 이해했다고 밝히고, AppleScript라는 대화형 프로세스를 켜는 것으로 오해했음을 설명했다. 실제 AppleScript 파일 읽기/메모 생성 코드와 Java IO 대응을 요청해 block-31에 osascript 실행 파일/AppleScript 코드 파일 구분·read POSIX file as UTF-8 원문·Files.readString 비유·tell Notes/make new note/본문 확인 원문을 추가했다. 고정 코드·Apple 공식 read/tell·설치된 Notes.sdef를 읽고 본문 readback·lease 종료, 실제 Notes/파일 실행·새 시험·원본 변경·추가 전달 없음이다. 새 코드 설명 이해·전체 읽기 완료는 미확인이다. [질문 기록](sessions/2026-10-12-mogi-productivity-pr21.md).
+
+## PR #21 iCloud 단계 이해·deliverNotes 재설명 — 2026-10-12 😸
+
+현재 Whiteboard **v40**, 같은 pins다. 모기가 iCloud에 바로 쓰는 줄 알았으나 단계가 달랐다고 재진술해 앞선 Mac 생성/동기화 구분의 이해 근거를 확인했다. 이어 deliverNotes의 AppleScript 실행/임시 폴더를 이해하지 못한다고 알려 block-31의 압축 문장을 같은 가상 원문·note.html/source.txt 내용/용도·영구 코드 파일 create-note.applescript·osascript/5개 인자·Notes 생성/결과/정리 흐름으로 교체했다. 고정 코드·설치된 osascript man/Apple 공식 설명·본문 readback·lease 종료 확인, 새 시험/개인 앱/원본 변경/추가 전달 없음이다. 새 설명 이해·전체 읽기 완료는 미확인이다. [질문 기록](sessions/2026-10-12-mogi-productivity-pr21.md).
+
+## PR #21 네트워크 단절과 delivered 의미 — 2026-10-12 😸
+
+현재 Whiteboard **v39**, 같은 pins다. 모기가 iCloud 저장 도중 네트워크가 끊기는 경우를 물어 block-32에 로컬 날짜 파일/Mac Notes 생성·확인/Apple iCloud 동기화의 주체를 구분했다. Mac 호출 실패·timeout은 archived 재시도, Mac 성공 뒤 cloud 미반영은 delivered로 기록해 Copywork가 다시 전송하지 않음, 불확실 호출은 기존 제목/원문으로 재사용/충돌 판단한다. delivered가 iCloud/폰 도착 ACK가 아님을 명시했다. 코드·Apple 공식 동기화 설명·본문 readback·lease 종료만 확인, 실제 네트워크 단절/개인 데이터/원본 변경/추가 전달 없음이다. [질문 기록](sessions/2026-10-12-mogi-productivity-pr21.md).
+
+## PR #21 일일 자동 처리와 수동 실행·잠금 재검토 — 2026-10-12 😸
+
+현재 Whiteboard **v38**, 같은 pins다. 모기가 하루 한 번 자동 전달 의도를 근거로 수동/다회 실행 전제와 잠금 필요성을 재검토하고 예외 수동 옵션을 제안했다. block-33에 현재 CLI 직접 실행 허용과 요구의 구분, 옵션의 명시성/동시성 미차단, 같은 launchd 작업으로 예외 재시도를 모으는 후보와 RunAtLoad를 보완했다. 원본 변경/잠금 제거/옵션 구현/MAILBOX 전달은 미확정이다. 코드·Apple 공개 job_start·설치된 launchctl man 대조와 본문 readback·lease 종료만 수행했으며 실제 동시 실행 시험/예약 변경은 없다. [논의 기록](sessions/2026-10-12-mogi-productivity-pr21.md).
+
+## PR #21 acquireLock의 이유 보완 — 2026-10-12 😸
+
+현재 Whiteboard **v37**, 같은 pins다. 모기의 CALL TREE 질문에 수동/예약 두 Node 프로세스가 같은 archived receipt/원문을 처리하는 가상 위험·하나만 진입/다른 실행 즉시 거절·처리/오류 뒤 release를 block-33에 보충하고 CALL TREE 잠금 라벨을 목적에 맞췄다. 해당 본문·CALL TREE readback·lease 종료, 새 시험/원본 변경/추가 전달 없음이다. 이해·전체 읽기 완료는 미확인이다. [질문 기록](sessions/2026-10-12-mogi-productivity-pr21.md).
+
+## PR #21 휴일 루틴과 예약 기능 연결 — 2026-10-12 😸
+
+현재 Whiteboard **v35**, 같은 pins다. 모기의 질문에 기존 휴일루틴09:00과 Copywork06:00이 모두 macOS launchd LaunchAgent 등록 방식임을 고정 코드로 대조했다. block-34에 OS의 시각 실행/우리 코드의 휴일 판단·StartCalendarInterval 의미·Spring 비유를 보완했다. 본문 readback·lease 종료 확인, 원본/예약/시험/추가 전달 없음이다. 이해·전체 읽기 완료는 미확인이다. [질문 기록](sessions/2026-10-12-mogi-productivity-pr21.md).
+
+## PR #21 구현자 보충 확인 — 2026-10-12 😸
+
+투두냥 회신 `msg_e88fa1ecfa2d` 뒤 API **v34**를 직접 읽었다. block-2의 문장 직접 선택 이유/당시 사용자 인용, block-30의 처리일 하나에 파일·receipt·제목 하나라는 절충, block-31의 빈 줄·NBSP·일반 본문 변경 계기/실기기 보고가 관련 설명 옆에 추가됐다. v31과 대조해 보충3문단 외 원문·발췌4개·그림·렌즈·pins 보존을 확인했고 source57범위/정확한 발췌4개를 대조했다. 새 인용도 로컬 실제 user 항목과 일치했다. GitHub OPEN/같은 base·head, 추가 시험·개인 원문·Notes·예약 설치·화면 확인은 없다. lease 종료/workingCount0은 투두냥 보고이며 수신 delivery를 검증 뒤 ACK했다. [보충 검증·통신](communication/log/2026-10-12-01-pr21-supplement-request.md). 아래 v31과 보충 미확인은 작성/전송 당시 상태다.
+
+## PR #21 Whiteboard 독립 작성 완료 — 2026-10-12 😸
+
+모기의 현재 열린 PR 요청으로 Copywork #21을 리뷰 `38bbea42-d85e-468f-bcda-c07e63a682bd` **v31**에 작성했다. base `1d67740de60029bb805a36bec5fef7b684606f70`, head `995952f18f8be49202509b6d15790eab5e185458`, 최종 GitHub OPEN/같은 pins다. 가상 원문 한 묶음의 파일/메모/receipt·실패 재시도·06:00/lock·Java/Spring 비유·발췌4개·Cubic P2네 건을 설명했다. 전체214시험·cutoff변형 실패·source54범위/정확한 발췌4개·docs-impact·diff 검사 통과, 렌즈7/16파일 미분류0·전체readback·두 lease 종료다. Desktop 열기/선택은 응답 성공, 실제 화면은 Accessibility 차단으로 독립 미검증이다. 개인 원문·Notes·LaunchAgent를 변경하지 않았다. 본문 전송 UAT의 iPhone 일반 본문 표시 수용 보고를 확인했으며 실제06:00 실행은 미관찰이다. [작성·검증 기록](sessions/2026-10-12-mogi-productivity-pr21.md).
+
+작성 뒤 MAILBOX에 선택 이유·빠진 문맥 보충 요청을 추가하고 현재 상대 자기 주소/Run/터미널 대조 후 14:23:06 KST `msg_e70e62ba3202` 한 번 enqueue 성공했다. 응답 delivered_at null, 수신/보충 완료는 미확인이다. [통신 로그](communication/log/2026-10-12-01-pr21-supplement-request.md). PR21 전체 읽기/이해 확인은 아직 없고 아래 PR18 읽기 완료와 구분한다.
+
+## PR #18 읽기 완료·PR #21 작성 시작 — 2026-10-12 😸
+
+모기가 PR18을 다 읽었다고 알려 전체 읽기 완료를 확인했다. 설명 없이 코드 한 조각 다시 보기는 아직 하지 않았으며 전체 이해·UAT 통과로 확대하지 않는다. 현재 열린 PR21 Copywork의 Whiteboard 작성을 요청해 독립 확인을 시작했다. PR18 마지막 기록 버전은 v42다.
+
+## 설계 고민 MAILBOX 인수 완료 — 2026-10-11 😸📬
+
+투두냥 회신 `msg_e7fb61c62e9f` 뒤 실제 인수 문서/STATE·제품 HEAD/원격 main `6606af7` 일치·MAILBOX 0바이트·Git 밖 원문 보존 hash 일치를 독립 확인했다. 저장 범위·대화 노출 고민은 현재 구현과 미채택 후보를 구분해 인수 완료됐으며 설계 해결/구현 완료는 아니다. delivery_f7dbdf8ea0e0 ACK 완료·빈 inbox 확인, 추가 전송 없음이다. Whiteboard v42·모기의 전체 읽기 완료 미확인 유지다. [검증·회신 기록](communication/log/2026-10-11-01-person-context-design-mailbox.md). 아래 수신/인수 미확인은 발신 당시 상태다.
+
+## PR #18 머지 확인·MAILBOX 전달 — 2026-10-11 😸📬
+
+모기의 명시적 요청으로 설계 고민 MAILBOX를 투두냥에게 전달했다. PR18은 GitHub **MERGED**, mergedAt 2026-10-10T07:22:31Z/merge commit bd12fc2cd4824db57b882598667e7731d06329fa/기존 base·head다. Whiteboard **v42**, pins 유지다. MAILBOX 기존 내용에 머지/기존 보충 완료와 새 인수 범위를 덧붙여 완료된 보충을 중복 수행하지 않도록 안내했다. 새 내용은 저장 범위·입력/대화 노출·긴 기록/구조의 열린 고민이며 구현/마이그레이션 승인은 아니다.
+
+실제 현재 runtime으로 자기 주소 갱신·resolve/상대 주소·Run 대조 후 08:40:06 KST `msg_617b90e9a688` 1회 enqueue 성공, delivered_at null/수신·인수 미확인이다. MAILBOX는 수신자가 인수 뒤 비우며 화이트보드냥이 대신 지우지 않았다. [전송 결과](communication/log/2026-10-11-01-person-context-design-mailbox.md). 원본 변경/새 worker/추측 재전송 없음, 읽기/UAT 완료 미확인이다. 아래 OPEN/미머지와 미전송 기록은 당시 상태다.
+
+## PR #18 현재 동시성 경계 수용 — 2026-10-11 😸
+
+현재 Whiteboard **v42**, 같은 pins다. 모기가 지금 여러 프로세스가 같은 정보를 쓰지 않으므로 비교/잠금 부재는 괜찮다고 판단했다. block-51에 현재 사용 전제에서 추가 잠금 필요가 낮다는 판단을 기술 경계 옆에 기록했다. 실제 환경의 동시 작성 부재는 모기의 보고이며 별도 계측하지 않았다. 전체 readback·다른 문서/렌즈/pins 보존·lease 종료 완료, 원본 변경/시험/MAILBOX/신호 없음이다. 전체 읽기/이해/UAT 완료는 미확인이다. [판단 기록](sessions/2026-10-08-mogi-productivity-pr18.md).
+
+후속으로 모기가 여러 명령을 연속 실행해도 같은 인물일 가능성은 낮다고 예상했다. 빈도 측정으로 확대하지 않고 수정 작업을 순서대로 완료하는 경우와 같은 인물의 수정 작업이 겹치는 경우를 구분해 답했다. 시나리오는 위 세션 기록에 남겼으며 Whiteboard v42·추가 전달 없음이다.
+
+## PR #18 오류 로그 검토 의견 — 2026-10-11 😸
+
+현재 Whiteboard **v41**, 같은 pins다. 모기가 Node58·59행 오류 로그 필요성을 물어 block-37에 stdin error/stderr data 차이·후속 실패 판정·원인 세부정보 손실과 원문 보호를 유지한 진단 후보를 설명했다. 가짜 child의 합성 EPIPE 두 경우로 정해진 실패/응답 없는 실패 출력을 확인했으며 실제 OS 오류/개인 유출 재현은 아니다. 전체 readback·다른 문서/렌즈/pins 보존·lease 종료 완료다. 원본 수정/전체 시험/MAILBOX/신호 없음, 새 구현 결정·이해·전체 읽기/UAT 완료 미확인이다. [검토 근거](sessions/2026-10-08-mogi-productivity-pr18.md).
+
+## PR #18 UTF-8 이해 재진술·영어 설명 — 2026-10-11 😸
+
+현재 Whiteboard **v40**, 같은 pins다. 모기가 문자마다 UTF-8 바이트 수가 달라 바이트를 모아 한 번 해석한다고 재진술해 해당 설명의 이해 근거를 확인했다. 이어 영어 질문에 block-55로 ASCII 1바이트/비ASCII 다중 바이트와 문자열 해석/완성된 JSON 해석 구분을 보완했다. A/ㄴ/é/😀 Node 가상 예시 확인·전체 readback·다른 문서/렌즈/pins 보존·lease 종료 완료다. 전체 시험/개인 접근/원본 변경/추가 전달 없음, 이번 후속 설명 이해·전체 읽기/UAT 완료는 미확인이다. [재진술·질문 기록](sessions/2026-10-08-mogi-productivity-pr18.md).
+
+## PR #18 한글 바이트·surrogate 설명 보완 — 2026-10-10 😸
+
+현재 Whiteboard **v39**, 같은 pins다. 모기가 이전 통신 구분 설명을 이해했다고 보고하고 UTF-8 조각과 surrogate 관계를 질문했다. block-55에 가의 EA B0 80 분할 → 개별 decode 시 ���/바이트 합친 뒤 decode 시 가라는 Node 독립 예시와 UTF-16 surrogate pair 비교를 추가했다. 고정 Git 원문·공식 설명 확인, 기존 회고/다른 문서/렌즈/pins 보존·전체 readback·lease 종료 완료다. 전체 시험/개인 접근/원본 변경/추가 전달은 없고 이번 설명 이해·전체 읽기/UAT 완료는 미확인이다. [질문·재현 기록](sessions/2026-10-08-mogi-productivity-pr18.md).
+
+## PR #18 서버 통신과 helper 실행 구분 — 2026-10-10 😸
+
+현재 Whiteboard **v38**, 같은 pins다. 모기의 다른 생태계 서버 통신 질문에 block-37에서 같은 Mac의 자식 프로그램 실행/stdio와 독립 서비스 사이 HTTP/gRPC를 구분하고 JSON 형식/전달 통로 차이를 보완했다. 공식 Node/gRPC/Spring 설명 확인·전체 readback·다른 문서/렌즈/pins 보존·lease 종료 완료, 원본 구현/MAILBOX/통신 변경이나 시험 없음이다. 답변 이해·전체 읽기/UAT 완료는 미확인이다. [질문 기록](sessions/2026-10-08-mogi-productivity-pr18.md).
+
+## PR #18 Swift 호출·pipe 설명 보완 — 2026-10-10 😸
+
+현재 Whiteboard **v37**, 같은 pins다. 모기가 구현 중 nativeRequest/Swift helper/stdin pipe를 이해하지 못한다고 알려 block-37을 가상 값의 왕복 흐름으로 다시 쓰고 diagram-59 sequence를 추가했다. 함수 생성/호출·별도 프로그램 실행·Node 입력과 Swift 입력 통로·JSON/EOF·stdout 결과/await를 Java ProcessBuilder와 실제 코드로 연결했다. 전체 readback·다른 문서/렌즈/pins 보존·lease 종료 확인, 개인 저장/시험 재실행/원본 변경/추가 전달 없음이다. 재설명 이해·전체 읽기/UAT 완료는 미확인이다. [질문·보완 기록](sessions/2026-10-08-mogi-productivity-pr18.md).
+
+## 인물 정보 설계 고민 MAILBOX 기록 — 2026-10-10 😸
+
+모기가 Keychain 저장 본문을 프롬프트로 전달하는 경로와 사회냥이의 상호작용 대화도 민감할 수 있음을 짚고 고민들을 MAILBOX에 기록하도록 요청했다. 기존 내용을 보존해 [MAILBOX](MAILBOX.md)에 미확정 쟁점·제안·현재 구현을 구분해 추가했다. 구현/마이그레이션 승인은 아니며 이번 요청은 기록이므로 Orca 신호는 보내지 않았다. Whiteboard v35 유지, 원본/개인 값 변경 없음, 인수·설계 결정은 미확인이다. [배경 기록](sessions/2026-10-08-mogi-productivity-pr18.md).
+
+## PR #18 저장 범위 설계 고민 — 2026-10-10 😸
+
+현재 Whiteboard는 **v35**, 같은 pins다. 모기의 사회냥이/Keychain 저장 범위·큰 본문·컬럼 설계 질문에 설계 block-58로 미확정 제안을 보완했다. 오래 필요한 짧은 요약·민감도와 지속 필요의 구분·사실/인상/추정/시점, 앱 본문8192-byte 제한과 Apple의 짧은 메모 용도, 필요 발생 시 구조화·암호화 파일/DB 대안을 설명했다. 사회냥이의 실제 저장 방식/연결은 미확인이고 새 구현/분류 결정을 확정하지 않았다. 전체 readback·기존 본문/렌즈/pins 보존·lease 종료 확인, 원본 코드/개인 값/MAILBOX/통신 변경·시험 재실행 없음이다. 읽기/이해/UAT 완료는 미확인이다. [논의 기록](sessions/2026-10-08-mogi-productivity-pr18.md).
+
+## PR #18 Keychain 구조 설명 보완 — 2026-10-10 😸
+
+현재 Whiteboard는 **v34**, 같은 pins다. 모기의 Redis key/value 비유·구조 질문에 설계 block-57로 검색 속성(class/service/account/sync)과 저장 내용(kSecValueData bytes), 앱 JSON 필드와 OS 속성의 구분·가상 item/JSON·Java DTO 비유를 보완했다. Apple/Redis 공식 설명과 고정 Swift를 대조했고 추가 블록 외 원문/회고/렌즈 보존·readback·lease 종료를 확인했다. 코드 변경·개인 값 접근·시험·추가 보충 신호는 없으며 모기의 이해·읽기/UAT 완료는 아직 미확인이다. 아래 v33은 앞선 질문 보완 당시 기록이다.
+
+## PR #18 읽기 질문 보완 — 2026-10-10 😸
+
+현재 Whiteboard는 **v33**, 기존 pins다. 모기가 덧붙이기 부재가 Keychain 기술 한계인지 질문해 Apple 업데이트 API와 고정 Swift를 확인했다. 현재 helper가 전체 값을 받는 구현 선택이며, 투두냥이 get으로 기존 본문을 읽어 새 정보와 합친 전체 본문을 replace/apply하면 두 정보를 보존할 수 있음을 block-33에 보완했다. API readback·다른 본문/회고/렌즈 보존·lease 종료를 확인했다. 모기의 이해·전체 읽기/UAT 완료는 아직 확인하지 않았다. 원본 구현·MAILBOX·추가 보충 요청은 변경하지 않았다. 아래 v32는 구현자 보충 당시 기록이다.
+
+## PR #18 구현자 보충 확인 — 2026-10-08 😸
+
+현재 Whiteboard는 **v32**, 기존 pins/같은 GitHub OPEN head다. 완료 회신 `msg_517a031d02e2` 뒤 API에서 PLAYBOOKS/사람 본문 구분·전체 교체의 이유/수고·UTF-8 byte 수신·반복 읽기 근거 범위 네 회고를 확인했다. 보존 v28과 대조해 추가4문단 외 원문·렌즈·pins 동일, 추가 source5범위를 직접 대조해 총53범위/발췌5개다. 추가 시험·개인 쓰기·실화면/UAT·읽기 이해 확인은 없다. 새 lease 종료는 투두냥 보고이며 수신 delivery ACK 완료다. 아래 v28와 전송/보충 미확인은 당시 기록이다. [본문·검증 기록](sessions/2026-10-08-mogi-productivity-pr18.md).
+
+## 현재 Whiteboard — PR #18 독립 작성 완료 · 2026-10-08 😸
+
+모기의 현재 열린 PR 요청으로 #18 로컬 Keychain 인물 맥락을 리뷰 `ca3cf39f-2ebc-4997-9cd4-8840b427e40f` **v28**에 작성했다. base `25ab30e35dc2aecf9ece1f0eadfc9eacb8f697e4`, head `280b457b3ee3dfb8a8c00f0a3536181febcd0f64`, GitHub 최종 조회 OPEN/같은 pins다. 가상 별칭 하나의 preview·생성·조회·명시적 전체 교체, Java 비유·발췌 5개·Cubic P2 네 건을 설명했다. 전체195 테스트·source48범위/발췌5개 대조·docs-impact·diff 검사 통과, 렌즈7개/13파일 미분류0, 본문 재확인·두 lease 종료다. 종전 Swift 부분 읽기 실패는 가상 분할 요청에서 재현되지 않았으며 현재 반복 읽기·경계 시험 통과와 구분했다. 실제 개인 Keychain 쓰기·값/UAT·실화면은 독립 미검증, CUA 조회는 시간 초과다. 읽기 반응·전체 이해는 아직 미확인이다. PR17 파일럿은 다음 PR으로 자동 반복하지 않았다. [작성·검증 기록](sessions/2026-10-08-mogi-productivity-pr18.md). 작성 후 보충 요청은 MAILBOX와 [통신 로그](communication/log/2026-10-08-01-pr18-supplement-request.md)를 따른다.
+
+이번 세션 시작 caller의 실제 Run·터미널을 확인해 기존 Run을 유지하고 runtime 변경에 따른 자기 주소 replace 등록·resolve를 완료했다. PR18 보충 요청은 MAILBOX에 추가하고 18:13:36 KST `msg_846d61797ee9`로 현재 투두냥 Run에 한 번 enqueue했다. delivered_at null/수신·보충 완료 미확인이다. 아래 PR17 인계와 과거 상태는 당시 기록이다.
+
 ## 인계 준비 — 2026-10-07 · 02 😸
 
 모기의 요청으로 [최신 인계](handoff/2026-10-07-02.md)를 작성했다. 준비 때 Whiteboard는 PR17 **v51**, 같은 최종 head `6068e1359d4a4abbd626c3d18c4ab3e2677064cf`이며 GitHub는 16:51:30 KST **MERGED**로 확인했다. 기존 OPEN 기록은 당시 상태다. 모기 UAT 세 단계는 수용 보고가 있지만 전체 PR 읽기/이해와 파일럿 종료는 미확인이다. 새 세션은 인계·현재 규칙을 읽고 자기 Run 주소를 갱신한 뒤 모기 요청을 따른다. PR17 보충은 완료됐고 중복 요청하지 않는다. MAILBOX는7,214바이트로 보존했고 자기 Run peek 미처리0건이다. 인계 전 main/원격은 `a058241` 일치·작업 폴더 깨끗함을 확인했으며 이번 인계 변경도 마무리 커밋·푸시한다. 터미널 강제 종료·원본 제품 repo 변경·종료 인사 메시지는 하지 않았다.
