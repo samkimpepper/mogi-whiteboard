@@ -1,5 +1,35 @@
 # STATE
 
+## PR22 종료·친구 하네스 결정 인수 완료 — 2026-10-13 😸
+
+회신 `msg_dbcf2ea77c48` 뒤 실제 제품 main `ec1d9cdf0f94a97ccdc6eb6684a1a567682ad299`의 두 문서 diff·원격/상대 HEAD를 대조했다. todo/STATE의 merge 대기 결론이 새 방향으로 교체됐고 DECISIONS T41/라우팅이 추가됐다. 부분 재사용 중단·친구 하네스 선택·③뒤 읽기 중단·설치/이관 미정/미실행·기록 보존을 구분했다. PR22 CLOSED/미머지·동일head, intake1391바이트/해시와 요청 내용·MAILBOX0바이트를 확인했다. delivery ACK 완료·남은 inbox0·추가 신호 없음이다. [통신/검증](communication/log/2026-10-13-08-pr22-close-direction.md). 실제 친구 하네스 설치 완료가 아니며 아래 인수 미확인은 발신 당시 상태다.
+
+## PR22 종료 결정 인수 알림 전송 — 2026-10-13 😸
+
+모기가 투두냥에게 알림을 보내라고 직접 요청했다. 현재 자기/상대 주소·Run generation·터미널을 대조하고15:02:11 KST `msg_b04feb49c043`를 한 번 enqueue했다. MAILBOX의 PR22 CLOSED/미머지·친구 하네스 사용 결정·제품 기록 인수·실제 설치/이관/회수 미확정 범위와 회신을 요청했다. 수신/인수/반영은 아직 미확인이다. [통신 정본](communication/log/2026-10-13-08-pr22-close-direction.md). 아래 일반 신호 미전송은 이 후속 요청 전의 상태다.
+
+## PR22 읽기 중단·PR 닫기·친구 하네스 사용 결정 — 2026-10-13 😸
+
+모기가 PR22를 더 읽지 않고 닫으며 친구의 `mogui-ADE-orchestrator` 하네스를 쓰기로 결정했다. 최신 명시적 닫기 요청에 따라 PR22 close 한 건만 수행했고 GitHub CLOSED/미머지·head `dddf500625d906381fc8d25d06744002a34af2cd`를 재확인했다. 기존 제품 코드/문서·branch·댓글은 변경하지 않았다. Whiteboard v37·검증·보충은 보존, 전체 읽기/이해 완료는 아니다. 친구 하네스 설치/이관·branch/worktree/기록 삭제는 이번에 실행하지 않았다.
+
+현재 결정은 [DECISIONS](DECISIONS.md#pr22-부분-재사용-시험을-중단하고-친구-하네스-사용으로-방향을-바꾼다), 관찰은 [PR22 기록](sessions/2026-10-13-mogi-productivity-pr22.md), 투두냥의 제품 기록 인수 요청은 MAILBOX에 남겼다. 일반 MAILBOX 신호 전송은 하지 않았고 수신/인수는 미확인이다. 이 대화는 PR 읽기 중단으로 기록하며 전체 세션 종료·커밋/푸시를 별도로 선언하지 않았다. 아래 OPEN/부분 재사용은 당시 상태다.
+
+## PR22 Cubic 문서 수정 독립 확인·v37 — 2026-10-13 😸
+
+후속 `msg_e267379030e6`를 처리하고 리뷰 `22dc7b88-8664-472f-8319-313a6b233dc7`를 **v37**로 갱신했다. base `510df284a5d34d51a0847b3891a336886376039d`, head `dddf500625d906381fc8d25d06744002a34af2cd`, OPEN/non-draft/MERGEABLE/CLEAN이다. 이전 e9086a1부터 README의 Python3→3.9이상 한 줄만 바뀐 것을 직접 대조했다. Cubic 실제 수정 원문·답변·resolved를 확인하고 동일 코드의 이전233/skip0·Python20·UAT 결과를 유지했다. 새 head docs-impact10/경고0·whitespace·Python3.9.6 함수 사용 가능은 직접 확인, 전체 시험/개인 UAT 반복은 없다.
+
+변경은 repin·block-7/48/50/52/54이며 구성53개 ID·보충55/56/57·원문4개·그림·나머지 본문·렌즈를 보존했다. source49범위/원문4개·렌즈4/10파일/미분류0·전체readback·lease종료/workingCount0, 완료 회신 `msg_28293dd98f6e` enqueue·delivery ACK 완료다. Python3.8실행·모기 전체 읽기/이해·커밋/푸시·세션 종료는 미수행이다. [통신/검증 정본](communication/log/2026-10-13-07-pr22-cubic-refresh.md)·[관찰](sessions/2026-10-13-mogi-productivity-pr22.md). 아래 v31/README미수정은 당시 기록이다.
+
+## PR22 구현자 보충 확인 — 2026-10-13 😸
+
+회신 `msg_fad222652479` 뒤 현재 리뷰 `22dc7b88-8664-472f-8319-313a6b233dc7` **v31**을 전체 대조했다. pins·렌즈는 같고 기존50노드/인용/원문4개/그림/Cubic/검증은 그대로다. block-55/56/57의 선택 이유·preview 의존 대가·실제 배정 확인 보고3문단만 관련 설명 옆에 추가됐다. 구현자 회고·실행 보고를 구분하고 새 사용자 발화·자동 hash 대조로 확대하지 않았다. GitHub OPEN/non-draft·같은 base/head·렌즈4/10파일·미분류0·실제 MAILBOX0바이트 확인, delivery ACK 완료·남은 inbox0이다. Cubic 최소버전 README 수정·새 시험·모기 전체 읽기/이해 확인은 이번 보충으로 완료된 것이 아니다. [통신/검증](communication/log/2026-10-13-06-pr22-supplement-request.md)·[관찰](sessions/2026-10-13-mogi-productivity-pr22.md). 아래 v28/보충 대기는 발신 당시 상태다.
+
+## PR22 Whiteboard 독립 작성 — 2026-10-13 😸
+
+모기의 요청으로 리뷰 `22dc7b88-8664-472f-8319-313a6b233dc7` **v28**을 작성했다. base `510df284a5d34d51a0847b3891a336886376039d`, head `e9086a121c1f1d8611c304063ef2fa63615c3cec`, 현재 OPEN/non-draft/MERGEABLE/CLEAN이다. 개발 중 개인 요청 사건·실제 사용자 선택·같은 계약 H의 check/worker-start/register·코드/운영 경계·Cubic1건·구체 시험/실제수용을 설명했다. 전체233/skip0·Python20포함·실제고정upstream check preview3조건/원문보존·docs-impact10/경고0·whitespace·source48/원문4·렌즈4/10파일/미분류0·전체readback·lease종료완료다.
+
+최신 PR의 동시 UAT PASS와 화면 수용 원문을 대조했고 개인 앱·실제 워커는 재실행하지 않았다. 고정 README의 Python3 표기는 Cubic 타당성 확인/미수정, Python3.8 실제 실행은 미확인이다. 원격에서 고정 upstream commit 획득이 실패해 정확한 로컬 clone 복사본으로 확인했으며 원인은 미확정이다. 질문은 채팅만 답하기·표 앞 배치 선호를 유지한다. MAILBOX에 구현자 문맥 보충 요청을 추가하고 13:32:58 KST `msg_5a68f36ea6f9`를 한 번 enqueue했다. 읽음·보충 완료는 아직 미확인이다. [통신 정본](communication/log/2026-10-13-06-pr22-supplement-request.md)·[관찰/검증](sessions/2026-10-13-mogi-productivity-pr22.md). 원본 repo/PR·개인 앱 변경·커밋/푸시·세션 종료는 없다. 아래 PR23/22 UAT 대기 기록은 당시 상태다.
+
 ## PR23 최신 main 기준·v45 / PR22 UAT 시점 인수 — 2026-10-13 😸
 
 메시지 `msg_1705e47c3cea`를 처리했다. 모기는 다음 Notes 보존 PR의 개발 워커 작업 중 PR22 동시 개인 요청 UAT를 하기로 선택했고, main56584e7의STATE/BACKLOG 두 문장에 반영됨을 직접 대조했다. 아직 UAT 실행·Notes A/B 선택·착수·T39 구현 완료는 아니다. 현재 Whiteboard는 **v45**, base `56584e7f803b747107c1385fb32665415df3b193`, head `3a199d1861786385b0ba1836c6639e8ae0ad06da` 유지다.
