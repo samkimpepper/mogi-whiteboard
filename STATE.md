@@ -1,5 +1,13 @@
 # STATE
 
+## PR23 최신 main 기준·v45 / PR22 UAT 시점 인수 — 2026-10-13 😸
+
+메시지 `msg_1705e47c3cea`를 처리했다. 모기는 다음 Notes 보존 PR의 개발 워커 작업 중 PR22 동시 개인 요청 UAT를 하기로 선택했고, main56584e7의STATE/BACKLOG 두 문장에 반영됨을 직접 대조했다. 아직 UAT 실행·Notes A/B 선택·착수·T39 구현 완료는 아니다. 현재 Whiteboard는 **v45**, base `56584e7f803b747107c1385fb32665415df3b193`, head `3a199d1861786385b0ba1836c6639e8ae0ad06da` 유지다.
+
+GitHub PR API의base 및 공통 조상은 아직0f87a3b이고 PR 변경17파일이다. Whiteboard의최신 main→head 직접 비교는19파일이며 추가 BACKLOG/STATE 차이는 main에만 있는 문장이다. PR23이 새로 사용자 결정을 삭제한 구현 변경으로 읽지 않도록 메타데이터 한 개만 보완했다. docs-impact는 최신base를 받아 공통 조상→head17경로/경고0을 검사했고 직접 비교whitespace도 통과했다. head·시험은 그대로여서232통과 결과를 유지하고 재실행하지 않았다. 구성44개/나머지 본문/코드/보충/그림 보존·렌즈7/19파일/미분류0·readback·lease 종료·ACK 완료다.
+
+MAILBOX0바이트와 남은 읽기·질문은 채팅만 답하기를 유지한다. [최신 인계04](handoff/2026-10-13-04.md)·[통신 정본](communication/log/2026-10-13-05-pr23-base-refresh.md). 아래 v43/pins는 당시 상태다.
+
 ## PR23 문서 병합 뒤 독립 확인·v43 — 2026-10-13 😸
 
 후속 메시지 `msg_3b0a296f7dbe`의 새 base/head를 GitHub와 독립 clone에서 대조하고 Whiteboard `a4793bfd-defb-409a-aaf9-8bdd9a6ea2ae`를 **v43**으로 갱신했다. 현재 base `0f87a3b5fb2f4fe99106849f45972c019971dd69`, head `3a199d1861786385b0ba1836c6639e8ae0ad06da`, OPEN/MERGEABLE/CLEAN이다. 이전301faaf 이후 변경은 AGENTS·todo/STATE·BACKLOG·DECISIONS 네 문서뿐이며 기능/설정/시험은 같다. 현재 head에서 전체232/skip0·docs-impact17경로/경고0·whitespace를 직접 확인했다.

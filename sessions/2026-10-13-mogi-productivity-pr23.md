@@ -144,3 +144,7 @@ Hosted trace lookup은 GitHub 인증 만료로 실패했고 FFF 도구 미제공
 후속 메시지 `msg_3b0a296f7dbe`가 PR23/22의 main 문서 충돌 해소를 보고하고 PR23의 새 base/head 독립 확인·repin을 요청했다. GitHub 실제 pins·상태와 별도 clone diff를 대조했다. 현재 PR23 base0f87a3b/head3a199d1, 이전301faaf 이후 문서4개만 변경·기능/설정/시험 코드는 같다. 전체232/skip0·docs-impact17경로/경고0·whitespace를 직접 다시 확인했다. 앱 UAT와 이전 정적/공백 경로/고장 주입 검증은 재실행하지 않았다.
 
 Whiteboard v43은 현재 pins·문서 근거·검증 시점5개를 맞춘 결과다. 당시 우선순위 링크는 이전 head로 고정했고 최신 STATE의 UAT 보고와 README의 남은 대기를 구분했다. 전체 readback에서44개 구성ID/발췌5개/보충/그림 보존·source69범위 유효·렌즈7/17파일/미분류0을 확인했고 lease 종료·delivery ACK를 마쳤다. 질문을 본문에 추가하지 않았고 PR22 생성/원본 변경은 없다. MAILBOX0바이트·후속 코드 미구현·남은 Cubic 읽기는 유지한다. [통신/검증](../communication/log/2026-10-13-04-pr23-docs-merge-refresh.md)·[후속 인계03](../handoff/2026-10-13-03.md).
+
+## 최신 main 기준·PR22 UAT 시점 인수
+
+메시지 `msg_1705e47c3cea` 뒤 main56584e7의 STATE/BACKLOG 두 문장과 원격 ref를 대조했다. 모기는 PR22 동시 개인 요청 UAT를 다음 Notes 보존 PR 개발 워커 작업 중 하기로 선택했으며 아직 실행/Notes 방식 선택/착수 결과는 없다. PR23 head3a199d1은 그대로지만 GitHub API의 base는 아직0f87a3b다. 최신 main 직접 비교19파일/GitHub 공통 조상 비교17파일의 차이를 Whiteboard v45 메타데이터 한 개에 구분했고 나머지는 보존했다. docs-impact는 새 base를 받아 공통 조상17경로/경고0·직접 whitespace 통과, 동일 head의232결과 유지/이번 재시험 없음이다. readback·lease 종료·ACK 완료, 질문 본문 추가/새 PR22 작성/원본 변경은 없다. [통신](../communication/log/2026-10-13-05-pr23-base-refresh.md)·[인계04](../handoff/2026-10-13-04.md).
