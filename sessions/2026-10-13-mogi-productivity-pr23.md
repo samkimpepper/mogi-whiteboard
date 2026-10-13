@@ -138,3 +138,9 @@ Hosted trace lookup은 GitHub 인증 만료로 실패했고 FFF 도구 미제공
 관찰/인계 commit42a5a8c를 푸시한 뒤 회신 `msg_33282c43aedd`이 도착했다. 투두냥은 네 요청 원문 인수·main 운영 문서 반영을 보고했고, GitHub commit `0f87a3b5fb2f4fe99106849f45972c019971dd69`의4문서 diff와 실제 main ref, PR23 수동 확인 안내를 직접 확인했다. 자동 확인 선택/안내(T37)와 실제 한국 시계 조회(T38)는 운영 규칙 반영, Notes 보존은 다음 PR 후보/A-B 미선택, ID 수정시각 완화(T39)는 사용자 선택 기록/코드 미구현이다. 별도 자동 확인 연결도 미착수다. 이를 네 구현 전체 완료로 기록하지 않는다.
 
 인수 로컬 원문14,416바이트가 이 기록소42a5a8c의 MAILBOX 원문과 동일함을 직접 비교했고 실제 MAILBOX0바이트를 확인했다. 수신자가 인수 뒤 정리한 결과이며 우리가 대신 비운 것은 아니다. PR source301faaf/OPEN·Whiteboard v37/본문/렌즈는 유지, delivery ACK 완료·추가 신호 없음이다. [완료 통신](../communication/log/2026-10-13-03-mailbox-intake-request.md)·[후속 인계](../handoff/2026-10-13-02.md). 이전 인계의 회신 미확인은 당시 상태로 보존한다.
+
+## 두 번째 인계 뒤 문서 병합·독립 기준 갱신
+
+후속 메시지 `msg_3b0a296f7dbe`가 PR23/22의 main 문서 충돌 해소를 보고하고 PR23의 새 base/head 독립 확인·repin을 요청했다. GitHub 실제 pins·상태와 별도 clone diff를 대조했다. 현재 PR23 base0f87a3b/head3a199d1, 이전301faaf 이후 문서4개만 변경·기능/설정/시험 코드는 같다. 전체232/skip0·docs-impact17경로/경고0·whitespace를 직접 다시 확인했다. 앱 UAT와 이전 정적/공백 경로/고장 주입 검증은 재실행하지 않았다.
+
+Whiteboard v43은 현재 pins·문서 근거·검증 시점5개를 맞춘 결과다. 당시 우선순위 링크는 이전 head로 고정했고 최신 STATE의 UAT 보고와 README의 남은 대기를 구분했다. 전체 readback에서44개 구성ID/발췌5개/보충/그림 보존·source69범위 유효·렌즈7/17파일/미분류0을 확인했고 lease 종료·delivery ACK를 마쳤다. 질문을 본문에 추가하지 않았고 PR22 생성/원본 변경은 없다. MAILBOX0바이트·후속 코드 미구현·남은 Cubic 읽기는 유지한다. [통신/검증](../communication/log/2026-10-13-04-pr23-docs-merge-refresh.md)·[후속 인계03](../handoff/2026-10-13-03.md).

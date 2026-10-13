@@ -1,5 +1,13 @@
 # STATE
 
+## PR23 문서 병합 뒤 독립 확인·v43 — 2026-10-13 😸
+
+후속 메시지 `msg_3b0a296f7dbe`의 새 base/head를 GitHub와 독립 clone에서 대조하고 Whiteboard `a4793bfd-defb-409a-aaf9-8bdd9a6ea2ae`를 **v43**으로 갱신했다. 현재 base `0f87a3b5fb2f4fe99106849f45972c019971dd69`, head `3a199d1861786385b0ba1836c6639e8ae0ad06da`, OPEN/MERGEABLE/CLEAN이다. 이전301faaf 이후 변경은 AGENTS·todo/STATE·BACKLOG·DECISIONS 네 문서뿐이며 기능/설정/시험은 같다. 현재 head에서 전체232/skip0·docs-impact17경로/경고0·whitespace를 직접 확인했다.
+
+당시 우선순위는 이전 head의 고정 링크로 보존하고, 최신 STATE의 UAT 보고와 README의 남은 대기 문장을 구분했다. 문서 근거·Cubic 검증 시점·메타데이터5개만 갱신했다. 44개 구성ID/원문 코드5개/구현자 보충/그림 보존, source69범위 유효·현재 STATE 변화 직접 확인, 렌즈7/17파일·미분류0·전체 readback·lease 종료·delivery ACK 완료다. 이전 공백 경로/고장 주입·정적 검사는 같은 코드의 이전 결과를 유지했고 재실행으로 기록하지 않았다. 질문은 본문에 추가하지 않았다.
+
+MAILBOX0바이트·네 요청 인수 상태·Notes 보존/수정시각 완화 코드 미구현·모기의 남은 Cubic 읽기는 유지다. PR22 Whiteboard 생성·원본 제품 repo/PR·개인 앱 변경은 없다. [최신 후속 인계](handoff/2026-10-13-03.md)·[통신/검증 정본](communication/log/2026-10-13-04-pr23-docs-merge-refresh.md). 앞선 인계02의v37/pins는 당시 상태이며 이 기록을 우선한다.
+
 ## 인계 뒤 MAILBOX 인수·운영 규칙 반영 확인 — 2026-10-13 😸
 
 관찰/인계commit42a5a8c 푸시 뒤 회신 `msg_33282c43aedd`을 읽고 실제 인수·문서 반영을 대조했다. 투두냥 main0f87a3b5의AGENTS/STATE/DECISIONS/BACKLOG4문서 patch·실제 main ref와 PR23의 중요 수동 확인 안내를 확인했다. T37(자동 확인 선택/사람 확인 안내)·T38(실제 한국 시계 조회)은 운영 규칙 반영, Notes 보존은 다음 PR 후보/A-B 미선택, ID 수정시각 완화T39는 선택된 방향/코드 미구현이다. 별도 자동 확인 기능도 미착수다.
