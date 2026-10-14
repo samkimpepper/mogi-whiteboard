@@ -1,5 +1,31 @@
 # STATE
 
+## PR28 현재 설명 수용·모기 직접 머지 예정 — 2026-10-14 😸
+
+모기는 v53의 변경 전후 설명 뒤 현재 내용으로 마무리해도 될 것 같다고 밝혔고 직접 머지하겠다고 말했다. 원본 mogi-productivity 변경 금지 경계를 다시 명시했다. 실제 머지 완료는 아직 확인하지 않았으며 전체 코드 이해·새 UAT 완료로 확대하지 않는다. 화이트보드냥은 원본 코드/문서/branch/PR/댓글/머지를 변경하지 않았고, 당시에는 PR 마무리 의사를 기록소의 세션 종료 요청으로 처리하지 않아 인계·커밋/푸시를 수행하지 않았다. [관찰](sessions/2026-10-14-mogi-productivity-pr28.md#모기의-현재-설명-수용직접-머지-의사). 아래 OPEN은 마지막 독립 조회 시점이다.
+
+## PR28 새 head 독립 확인·Whiteboard v53 — 2026-10-14 😸
+
+현재 리뷰 `6b3d9c52-acda-44ac-9b9e-c5e14209174c`는 **v53**, base `de387a5805ccd2a1fd04137e7a7931762d45235e`·head `5434c05cd01544699ebcfdbf50284b2edc956b6f`다. 별도복사본에서전체제목검색·소속보존·JS/Swift/readback·임시표/작업규칙을독립대조하고244시험/skip0·docs-impact45/경고0·공백·변경AppleScript2/Swift검사·help출력을통과했다. 본문/그림/코드4/63source·9렌즈45파일/미분류0·전체readback·lease종료working0이다. 현재readOpen사용처를바로명시했고현황판10개제한은다음PR이므로미적용이다. 새head프로젝트Anytime소속보존은투두냥UAT댓글보고로구분했으며복수후보/새생성실기기는미실행이다. 마지막PR조회OPEN/MERGEABLE/CLEAN·같은head. 기존보충51~54보존·CALL TREE7frame만교체API로새ID배정·총44컴포넌트다. [검증/통신](communication/log/2026-10-14-05-pr28-head-refresh.md)·[세션](sessions/2026-10-14-mogi-productivity-pr28.md#새-head-독립-재확인--whiteboard-v53). 아래v29와변경예정은이전시점이다.
+
+## PR28 읽기 중 요청 인수·head 변경 예정 보고 — 2026-10-14 😸
+
+모기 요청으로 MAILBOX의 URL update 조사·임시 호출 경로 표·Area 생략 전체 제목 검색 수정 세 건을 투두냥 대표에게 한 번 전송했다. 인수 회신 뒤 실제 MAILBOX0바이트·todo-ops 로컬 인수 기록의 내용/조건을 확인했다. 이어 `msg_4809fc130c97`은 모기 결정으로 검색 수정과 임시 표를 같은 PR28 브랜치에 넣고 URL 조사는 별도 진행한다고 전했다. Codex 리뷰 뒤 새 head를 알린다는 변경 예정 보고이며 새 head·구현·리뷰 완료는 아직 미확인이다. 현재 Whiteboard **v29·head 092dc8d9fbb25b0dbde7d1d472e7f923224294ba**의 pins·본문은 유지한다. [통신 정본](communication/log/2026-10-14-03-pr28-reading-mailbox.md)·[읽기 기록](sessions/2026-10-14-mogi-productivity-pr28.md). 아래 동일head 상태는 이전 독립 확인 시점이다.
+
+## 화이트보드냥 resume·기존 Run 주소 복구 — 2026-10-14 😸
+
+모기가 새터미널에서 같은대화를 resume했다고 알려 실제 환경변수/Orca 목록으로 자기Codex를 확인했다. 기존Run `run_933f72393160`을 새handle에 run-use로 연결해 generation2로 복구하고 자기register --replace/resolve를 마쳤다. 기존터미널은 operator_close, 현재자기는 connected/writable·같은runtime·명시적peek0이다. 옵션없는조회가 별도shell을 보여줘 실제자기handle을 명시했고 추측연결은 하지 않았다. 새Run/메시지/상대주소/훅 변경은 없다. PR28 v29 읽기·표선호·설명질문은 유지한다. [복구근거](sessions/2026-10-14-whiteboard-resume.md). 아래generation1 주소는 이전시점 기록이다.
+
+## PR28 구현 문맥 보충 확인 — v29 · 2026-10-14 😸
+
+회신 `msg_2c6f84e12c44` 뒤 현재 리뷰 **v29**를 보존v25와 전체 대조했다. pins·렌즈·기존40노드의 내용/순서·발췌4·표/그림/검증/접힌근거 동일, ③ 뒤51/52·⑤ 뒤53/54의 두callout/두문단4노드만 추가다. 현재회고/실측보고/작업자추론을 구분하며 추가6source·역사8be5cba diff발췌를 독립 확인했다. 같은코드의241시험은 반복하지 않았다. PR OPEN/동일head·MAILBOX0바이트·delivery ACK/inbox0이다. 발신은 feature Claude작업자로 대표주소 교체는 아니며 lease종료는 보충자의 보고다. 모기읽기/이해·새UAT·원본변경·커밋/푸시는 없다. [보충검증](sessions/2026-10-14-mogi-productivity-pr28.md#구현-문맥-보충-완료-확인--v29)·[통신](communication/log/2026-10-14-02-pr28-supplement-request.md). 아래v25/보충미확인은 발신 당시 상태다.
+
+## PR28 독립 Whiteboard 작성·보충 요청 — 2026-10-14 😸
+
+투두냥의 모기 요청 전달 `msg_84c92cf32261`을 받아 리뷰 `6b3d9c52-acda-44ac-9b9e-c5e14209174c` **v25**를 독립 작성했다. base `de387a5805ccd2a1fd04137e7a7931762d45235e`·head `092dc8d9fbb25b0dbde7d1d472e7f923224294ba`, 최종 PR28 OPEN/MERGEABLE/CLEAN·동일head다. 모든 Area/Area없음·기본생성·제목재사용범위·날짜만Area배정 회귀·저장값 unavailable·현황판·study예외·Cubic/Codex를 설명했다. 전체241/skip0·회귀head통과/base실패/setter제거실패·AppleScript7/Swift정적검사·docs-impact42/경고0·source47/발췌4·본문40노드·렌즈9/42파일/미분류0·전체readback·lease종료/workingCount0이다.
+
+Desktop생성/선택 성공, 실제화면/UAT는 독립미실행이고 같은head UAT1~3은 모기가 위임한 투두냥의 보고다. Hosted 구현세션은 인증오류 없이 unavailable/0events였으며 원문인용을 만들지 않았다. MAILBOX 보충요청 뒤 현재양쪽주소를 대조해 12:00:06 KST `msg_4c4e6d2b6398` 한 번 enqueue·원delivery ACK/inbox0; 수신/보충완료·모기읽기/이해는 미확인이다. 공개snapshot/원본repo·PR·개인앱 변경·커밋/푸시·세션종료는 없다. [작성근거](sessions/2026-10-14-mogi-productivity-pr28.md)·[통신](communication/log/2026-10-14-02-pr28-supplement-request.md). 아래 인계/PR22 기록은 앞선 상태다.
+
 ## 세션 인계 — 2026-10-14 😸
 
 모기의 컨텍스트 정리·인계 요청에 따라 [최신 인계](handoff/2026-10-14-01.md)를 작성했다. PR22 종료/친구 하네스 결정·Whiteboard v37 보존·투두냥 Claude 교체·trace 인증 복구와 미확인 범위를 이어받는다. MAILBOX는0바이트이고 추가 신호·새 업로드는 없다. 종료 절차에 따라 기록소 변경을 검토해 커밋·푸시하고 실제 원격 HEAD·최종 clean 상태로 성공 여부를 확인한다. 실제 터미널 종료·SessionEnd 훅 성공을 뜻하지 않는다.
