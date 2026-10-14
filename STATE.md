@@ -1,5 +1,21 @@
 # STATE
 
+## 세션 인계 — 2026-10-14 😸
+
+모기의 컨텍스트 정리·인계 요청에 따라 [최신 인계](handoff/2026-10-14-01.md)를 작성했다. PR22 종료/친구 하네스 결정·Whiteboard v37 보존·투두냥 Claude 교체·trace 인증 복구와 미확인 범위를 이어받는다. MAILBOX는0바이트이고 추가 신호·새 업로드는 없다. 종료 절차에 따라 기록소 변경을 검토해 커밋·푸시하고 실제 원격 HEAD·최종 clean 상태로 성공 여부를 확인한다. 실제 터미널 종료·SessionEnd 훅 성공을 뜻하지 않는다.
+
+## Trace 인증 연결 복구 직접 확인 — 2026-10-14 😸
+
+모기의 정확한 `login --traces` 명령과 기기 승인만 했다는 보고·현재 GitHub 승인 목록·CLI의 서버 응답을 대조했다. 서비스 계정은 200인데 저장소 요청은 401이었고 dev.fast 승인이 없었다. 모기가 직접 GitHub 재승인을 마친 뒤 OAuth 목록에 `/dev/fast`가 나타나고 같은 CLI 저장소 요청 200·내 업로드 상태 조회 exit0으로 정상화됐다. 로컬 로그인 파일 수정 시각은 그대로다. 명령 옵션 오류는 아니며 기기 승인만으로 GitHub 승인 연결이 복구되지 않았던 상태다. 기기 흐름이 왜 재승인을 완료하지 않았는지 서비스 내부 원인은 미확정, 새 업로드/일괄 sync는 미실행이다. [조사·전후 근거](sessions/2026-10-14-whiteboard-trace-auth.md). 아래 인증 거절·미확정 기록은 복구 전 상태이며 상대에게 추가 회신·공개 게시·커밋/푸시는 없다.
+
+## Trace 업로드 인증 문의 조사·회신 — 2026-10-14 😸
+
+투두냥 문의 `msg_ba74753d3efe`에 현재 CLI 조회·과거 ctx 근거·공개 공식 소스로 답했다. 서비스 계정 조회는 성공하지만 저장소 trace 조회는 현재도 인증 거절이다. 별도 저장소 승인 흐름과 재승인 후 확인·필요한 session만 sync하는 방법을 안내했고 서버 측 근본 원인은 미확정으로 남겼다. reply `msg_3117f2ac52f8` enqueue·원 delivery ACK·남은 inbox0, 상대 수신은 미확인이다. 실제 권한·로그인·설정·업로드 변경 없이 [조사와 통신 근거](communication/log/2026-10-14-01-trace-auth-inquiry.md)를 기록했다.
+
+## 투두냥 대표 교체 알림 확인 — 2026-10-13 😸
+
+알림 `msg_a4b513852a2e` 뒤 상대 제공 주소 파일과 실제 Orca Run/terminal을 대조해 새 Claude 투두냥 대표를 확인했다. 작업공간은 Orca 루트이며 현재 agentIdentity·generation1·incarnation·connected/writable이 일치한다. 앞으로 상대는 `mogi-productivity/.local/agent-address.json`과 실제 상태를 대조해 찾고, 과거 Codex 전용 resolve todo로 조회하지 않는다. 자기 화이트보드냥 Run·register/resolve는 유지한다. 수신 답장 `msg_013aa42d1632` enqueue·원 delivery ACK·남은 inbox0, 상대의 답장 수신 확인은 아직 미확인이다. [통신 근거](communication/log/2026-10-13-09-todo-representative-change.md). PR22/Whiteboard v37·사용자 결정·MAILBOX는 이번 알림으로 바뀌지 않았다.
+
 ## PR22 종료·친구 하네스 결정 인수 완료 — 2026-10-13 😸
 
 회신 `msg_dbcf2ea77c48` 뒤 실제 제품 main `ec1d9cdf0f94a97ccdc6eb6684a1a567682ad299`의 두 문서 diff·원격/상대 HEAD를 대조했다. todo/STATE의 merge 대기 결론이 새 방향으로 교체됐고 DECISIONS T41/라우팅이 추가됐다. 부분 재사용 중단·친구 하네스 선택·③뒤 읽기 중단·설치/이관 미정/미실행·기록 보존을 구분했다. PR22 CLOSED/미머지·동일head, intake1391바이트/해시와 요청 내용·MAILBOX0바이트를 확인했다. delivery ACK 완료·남은 inbox0·추가 신호 없음이다. [통신/검증](communication/log/2026-10-13-08-pr22-close-direction.md). 실제 친구 하네스 설치 완료가 아니며 아래 인수 미확인은 발신 당시 상태다.
